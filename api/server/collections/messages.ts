@@ -1,0 +1,5 @@
+// this file stores message model on server
+import { MongoObservable } from 'meteor-rxjs';
+import { Message } from '../models';
+
+export const Messages = new MongoObservable.Collection<Message>('messages');
