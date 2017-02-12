@@ -16,7 +16,9 @@
 </ion-header>
 
 <ion-content class="chats-page-content">
+  <!-- ionic translates ion-list to a list, ionic-item is item on list  -->
   <ion-list class="chats">
+    <!-- async pipe used to iterate through data which should be fetched asynchronously -->
     <ion-item-sliding *ngFor="let chat of chats | async">
       <button ion-item class="chat">
         <img class="chat-picture" [src]="chat.picture">
