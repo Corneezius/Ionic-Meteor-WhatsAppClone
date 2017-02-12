@@ -70,4 +70,15 @@ export class ChatsPage {
       }
     ]);
   }
+  // removechat function that fires onclick,
+  removeChat(chat: Chat): void {
+    // declare parameter as a Chat Object, the absence of having any type at all so maybe not though
+    this.chats = this.chats.map<Chat[]>(chatsArray => {
+      // const makes variables immutable, like var
+      const chatIndex = chatsArray.indexOf(chat);
+      chatsArray.splice(chatIndex, 1);
+
+      return chatsArray;
+    });
+  }
 }
