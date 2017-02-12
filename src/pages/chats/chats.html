@@ -20,6 +20,7 @@
   <ion-list class="chats">
     <!-- async pipe used to iterate through data which should be fetched asynchronously -->
     <ion-item-sliding *ngFor="let chat of chats | async">
+      <button ion-item class="chat" (click)="showMessages(chat)">
       <button ion-item class="chat">
         <img class="chat-picture" [src]="chat.picture">
         <div class="chat-info">

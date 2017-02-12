@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chats, Messages } from 'api/collections';
 import { Chat } from 'api/models';
+import { NavController } from 'ionic-angular';
 // add observable to use stream of data for view
 import { Observable } from 'rxjs';
 // moment is an esssential package for data fabrication
@@ -12,8 +13,12 @@ import { Observable } from 'rxjs';
 export class ChatsPage implements OnInit {
   chats;
 
-  constructor() {
+  constructor(private navCtrl: NavController) {
   }
+
+  showMessages(chat): void {
+   this.navCtrl.push(MessagesPage, {chat});
+ }
 
   ngOnInit() {
     this.chats = Chats
