@@ -4,6 +4,7 @@ import { Chat } from 'api/models';
 import { NavController } from 'ionic-angular';
 // add observable to use stream of data for view
 import { Observable } from 'rxjs';
+import { MessagesPage } from '../messages/messages';
 // moment is an esssential package for data fabrication
 
 
