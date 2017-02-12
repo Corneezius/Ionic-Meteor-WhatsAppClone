@@ -4,14 +4,10 @@ import { Messages } from './collections/messages';
 import * as moment from 'moment';
 import { MessageType } from './models';
 
-
-
 Meteor.startup(() => {
-  // code to run on server at startup
   if (Chats.find({}).cursor.count() === 0) {
     let chatId;
 
-    // dont use observables here, use .collection instead to pull data
     chatId = Chats.collection.insert({
       title: 'Ethan Gonzalez',
       picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
