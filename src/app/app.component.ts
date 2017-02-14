@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { ChatsPage } from '../pages/chats/chats';
 import { MessagesPage } from '../pages/messages/messages';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -11,9 +12,12 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = ChatsPage;
+  rootPage: any;
 
   constructor(platform: Platform) {
+    // check to see whetehr user is logged in
+    this.rootPage = Meteor.user() ? ChatsPage : LoginPage;
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
