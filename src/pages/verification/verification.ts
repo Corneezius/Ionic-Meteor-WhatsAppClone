@@ -35,7 +35,7 @@ export class VerificationPage implements OnInit {
          animate: true
        });
      })
-
+}
   handleError(e: Error): void {
     console.error(e);
 
