@@ -26,13 +26,13 @@ export class MessagesPage implements OnInit, OnDestroy {
 
  // simple service that gives you access to ey value storage
  constructor(
-  this.senderId = Meteor.userId();
   navParams: NavParams,
   private el: ElementRef
 ) {
     this.selectedChat = <Chat>navParams.get('chat');
     this.title = this.selectedChat.title;
     this.picture = this.selectedChat.picture;
+    this.senderId = Meteor.userId();
   }
 
   private get messagesPageContent(): Element {
