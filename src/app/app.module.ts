@@ -6,6 +6,7 @@ import { PhoneService } from '../services/phone';
 import { LoginPage } from '../pages/login/login';
 import { MessagesPage } from '../pages/messages/messages';
 import { MyApp } from './app.component';
+import { VerificationPage } from '../pages/verification/verification';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { MyApp } from './app.component';
      ChatsPage,
      MessagesPage,
      LoginPage,
+     VerificationPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -23,7 +26,8 @@ import { MyApp } from './app.component';
     MyApp,
     ChatsPage,
     MessagesPage,
-    LoginPage
+    LoginPage,
+    VerificationPage
 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
