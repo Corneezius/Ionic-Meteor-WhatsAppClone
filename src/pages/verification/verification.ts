@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { PhoneService } from '../../services/phone';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'verification',
@@ -28,11 +29,12 @@ export class VerificationPage implements OnInit {
   }
 
   verify(): void {
-    this.phoneService.login(this.phone, this.code)
-    .catch((e) => {
-      this.handleError(e);
-    });
-  }
+    // redirect users to profile page after verification
+    this.phoneService.login(this.phone, this.code).then(() => {
+       this.navCtrl.setRoot(ProfilePage, {}, {
+         animate: true
+       });
+     })
 
   handleError(e: Error): void {
     console.error(e);
