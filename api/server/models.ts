@@ -20,6 +20,7 @@ export interface Message {
   _id?: string;
   chatId?: string;
   content?: string;
+  senderId?: string;
   createdAt?: Date;
   type?: MessageType;
   ownership?: string;
