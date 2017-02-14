@@ -17,6 +17,7 @@ export class MessagesPage implements OnInit, OnDestroy {
   selectedChat: Chat;
   title: string;
   picture: string;
+  senderId: string;
   messages: Observable<Message[]>;
   messagesDayGroups;
   message: string = '';
@@ -25,6 +26,7 @@ export class MessagesPage implements OnInit, OnDestroy {
 
  // simple service that gives you access to ey value storage
  constructor(
+  this.senderId = Meteor.userId();
   navParams: NavParams,
   private el: ElementRef
 ) {
@@ -125,8 +127,8 @@ findMessagesDayGroups() {
 
       // Compose missing data that we would like to show in the view
       messages.forEach((message) => {
-        message.ownership = isEven ? 'mine' : 'other';
-        isEven = !isEven;
+        // check and see if message is yours
+        message.ownership = this.senderId == message.senderId ? 'mine' : 'other';
 
         return message;
       });
