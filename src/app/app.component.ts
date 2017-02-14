@@ -6,6 +6,7 @@ import { MessagesPage } from '../pages/messages/messages';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })

@@ -23,7 +23,8 @@ import { MyApp } from './app.component';
     MessagesPage
 
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}],
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
   PhoneService
+]
 })
 export class AppModule {}
